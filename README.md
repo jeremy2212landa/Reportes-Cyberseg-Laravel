@@ -5,11 +5,7 @@ Aplicaciones para Gestionar proyectos de pentesting web desarrollada con PHP (**
 
 ### Modelo conceptual de BD
 
-``` sql
-
-
-
-```
+![[.others/Reportes_cyberseg.png]]
 
 ---
 ## Route List
