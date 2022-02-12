@@ -5,7 +5,7 @@ Aplicaciones para Gestionar proyectos de pentesting web desarrollada con PHP (**
 
 ### Modelo conceptual de BD
 
-![https://github.com/jeremy2212landa/Reportes-Cyberseg-Laravel/blob/main/.others/Reportes_cyberseg.png]
+![Database Modeling](https://raw.githubusercontent.com/jeremy2212landa/Reportes-Cyberseg-Laravel/main/.others/Reportes_cyberseg.png)
 
 ---
 ## Route List
