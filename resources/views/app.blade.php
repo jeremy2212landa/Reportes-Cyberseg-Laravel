@@ -16,9 +16,9 @@
         @routes
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased black">
         @inertia
-
+        
         @env ('local')
             <script src="http://localhost:3000/browser-sync/browser-sync-client.js"></script>
         @endenv
