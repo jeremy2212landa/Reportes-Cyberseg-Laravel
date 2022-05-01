@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Critic extends Model
 {
     use HasFactory;
 
@@ -23,10 +23,11 @@ class User extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'cve_id' => 'integer',
     ];
 
-    public function project()
+    public function cve()
     {
-        return $this->belongsTo(Project::class);
+        return $this->belongsTo(Cve::class);
     }
 }

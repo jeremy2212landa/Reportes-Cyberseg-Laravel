@@ -1,0 +1,40 @@
+models:
+
+  Project:
+    name: string unique 
+    description: longtext
+    user_id: id
+    relationships:
+      belongsToMany: Cve
+      hasMany: User
+
+  Critic:
+    type: enum:informative,low,medium,high,critical
+    cve_id: id
+
+  User_image:
+    url: string
+    user_id: id 
+
+  Cve:
+    cve_code: string
+    cvss: integer
+    nessus_cod: integer(9)
+    nmap_cod: integer(9)
+    en_description: longtext
+    es_description: longtext
+    relationships:
+      belongsToMany: Project
+      hasOne: Critic
+
+controllers: 
+
+  Project:
+    resource
+    
+  Cve:
+    resource
+
+    
+
+

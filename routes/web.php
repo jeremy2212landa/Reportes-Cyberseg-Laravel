@@ -27,3 +27,9 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
+
+
+Route::resource('project', App\Http\Controllers\ProjectController::class);
+
+Route::resource('cve', App\Http\Controllers\CveController::class);
+

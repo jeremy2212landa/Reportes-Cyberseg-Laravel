@@ -4,16 +4,17 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-use App\Models\User;
+use App\Models\Critic;
+use App\Models\Cve;
 
-class UserFactory extends Factory
+class CriticFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = User::class;
+    protected $model = Critic::class;
 
     /**
      * Define the model's default state.
@@ -23,7 +24,8 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            
+            'type' => $this->faker->randomElement(["informative","low","medium","high","critical"]),
+            'cve_id' => Cve::factory(),
         ];
     }
 }

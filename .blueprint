@@ -1,0 +1,35 @@
+created:
+    - app/Http/Controllers/ProjectController.php
+    - app/Http/Controllers/CveController.php
+    - database/factories/ProjectFactory.php
+    - database/factories/CriticFactory.php
+    - database/factories/UserImageFactory.php
+    - database/factories/CveFactory.php
+    - database/migrations/2022_05_01_033321_create_projects_table.php
+    - database/migrations/2022_05_01_033322_create_critics_table.php
+    - database/migrations/2022_05_01_033323_create_user_images_table.php
+    - database/migrations/2022_05_01_033324_create_cves_table.php
+    - database/migrations/2022_05_01_033325_create_cve_project_table.php
+    - app/Models/Project.php
+    - app/Models/Critic.php
+    - app/Models/User_image.php
+    - app/Models/Cve.php
+    - tests/Feature/Http/Controllers/ProjectControllerTest.php
+    - tests/Feature/Http/Controllers/CveControllerTest.php
+updated:
+    - routes/web.php
+skipped:
+    - resources/views/project/index.blade.php
+    - resources/views/project/create.blade.php
+    - resources/views/project/show.blade.php
+    - resources/views/project/edit.blade.php
+    - resources/views/cve/index.blade.php
+    - resources/views/cve/create.blade.php
+    - resources/views/cve/show.blade.php
+    - resources/views/cve/edit.blade.php
+models:
+    Project: { name: 'string unique', description: longtext, user_id: id, relationships: { belongsToMany: Cve, hasMany: User } }
+    Critic: { type: 'enum:informative,low,medium,high,critical', cve_id: id }
+    User_image: { url: string, user_id: id }
+    Cve: { cve_code: string, cvss: integer, nessus_cod: integer(9), nmap_cod: integer(9), en_description: longtext, es_description: longtext, relationships: { belongsToMany: Project, hasOne: Critic } }
+    User: { relationships: { belongsTo: Project } }

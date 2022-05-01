@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Cve extends Model
 {
     use HasFactory;
 
@@ -25,8 +25,13 @@ class User extends Model
         'id' => 'integer',
     ];
 
-    public function project()
+    public function projects()
     {
-        return $this->belongsTo(Project::class);
+        return $this->belongsToMany(Project::class);
+    }
+
+    public function critic()
+    {
+        return $this->hasOne(Critic::class);
     }
 }
